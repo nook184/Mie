@@ -114,17 +114,7 @@
 
     <p>และสุดท้ายนี้... เค้ารักเธอนะ รักมากจริงๆ รักแบบไม่มีเงื่อนไขใดๆ</p>
 
-    <button onclick="playMusic()">เปิดเพลง</button>
-    <iframe id="ytplayer" width="0" height="0"
-      src="https://www.youtube.com/embed/aYW47a31jH4?enablejsapi=1"
-      frameborder="0" allow="autoplay"></iframe>
-    
-    <script>
-      function playMusic() {
-        const player = document.getElementById('ytplayer').contentWindow;
-        player.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      }
-    </script>    
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/aYW47a31jH4?autoplay=1&mute=0&loop=1&playlist=aYW47a31jH4" frameborder="0" allow="autoplay"></iframe> 
       </div>
     </div>
   </div>
