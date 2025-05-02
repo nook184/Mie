@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ถึงคนที่ฉันรักที่สุด 💖</title>
+  <title>ถึงที่รักของเค้า 💗</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ffd6ec, #ffe5f6);
+      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
       font-family: 'Kanit', sans-serif;
       color: #333;
       overflow: hidden;
@@ -16,10 +16,10 @@
 
     .container {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      flex-direction: column;
       text-align: center;
       z-index: 1;
       position: relative;
@@ -31,7 +31,6 @@
       padding: 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       max-width: 500px;
-      position: relative;
       z-index: 10;
     }
 
@@ -45,29 +44,22 @@
       line-height: 1.8;
     }
 
+    .image {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
     .heart {
       font-size: 2em;
       animation: pulse 1s infinite;
       color: #ff5a91;
     }
 
-    .image {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
     audio {
       margin-top: 20px;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    /* เอฟเฟกต์หัวใจลอย */
     .floating-hearts {
       position: fixed;
       top: 0;
@@ -87,15 +79,21 @@
       opacity: 0.7;
     }
 
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
     @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
   </style>
 </head>
@@ -104,28 +102,29 @@
 
   <div class="container">
     <div class="card">
+      <img class="image" src="https://media.discordapp.net/attachments/1336999472303177761/1367802415927263332/IMG_2401.jpg?ex=6815e8c4&is=68149744&hm=72d3571abfd572b7d4123b3a2945b61853c30a8fc6c27c7761ecf75d1dbe8095&=&format=webp&width=294&height=500" alt="Hello Kitty" />
       <div class="heart">💖</div>
-      <img class="image" src="https://i.imgur.com/G1fE9Kz.png" alt="Cute couple" />
-      <h1>ถึงคนที่ฉันรักที่สุด</h1>
+      <h1>ถึงคนที่เค้ารักที่สุดในโลก</h1>
       <p>
-        เค้าเขียนเว็บนี้ขึ้นมาเพราะอยากบอกว่า...<br />
-        <strong>เค้ารักตัวเองมากๆ เลยนะ 🥺</strong><br /><br />
-        ขอบคุณที่อยู่ข้างๆ กันเสมอ ไม่ว่าจะวันไหน <br />
-        ตัวเองคือคนที่พิเศษที่สุดในโลกของเค้าเลยนะ 💘<br /><br />
-        รักมากๆ เลยนะ 💞<br />
+        ตัวเองรู้มั้ย? เค้าตั้งใจทำเว็บนี้ให้เลยนะ 💌<br />
+        ก็เพราะว่า... <br /><br />
+        <strong>เค้ารักตัวเองมากๆ เลยย 🥺💕</strong><br /><br />
+        ไม่ว่าเวลาจะผ่านไปแค่ไหน <br />
+        เค้าก็ยังอยากอยู่กับตัวเองแบบนี้ไปเรื่อยๆ <br />
+        เพราะตัวเองคือโลกทั้งใบของเค้าเลย 💘<br /><br />
+        รักที่สุดนะ จุ๊บๆ 💋<br />
         - จากเค้าคนเดิม -
       </p>
       <audio autoplay loop controls>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_3879ab205c.mp3?filename=spring-flowers-ambient-piano-10958.mp3" type="audio/mpeg">
-        เพลงไม่สามารถเล่นได้บนเบราว์เซอร์นี้
-      </audio>
+        <source src="https://drive.google.com/uc?export=download&id=1Fp1qaRjly91NWiz4-tJ6Tuu5joSF3B9w" type="audio/mpeg">
+        เพลงไม่สามารถเล่นได้
+      </audio>      
     </div>
   </div>
 
   <script>
-    // สร้างหัวใจลอยทุก 300ms
+    // สร้างหัวใจลอย
     const heartsContainer = document.getElementById("hearts");
-
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart-float");
@@ -133,10 +132,8 @@
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
       heartsContainer.appendChild(heart);
-
       setTimeout(() => heart.remove(), 5000);
     }
-
     setInterval(createHeart, 300);
   </script>
 </body>
