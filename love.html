@@ -114,12 +114,17 @@
 
     <p>และสุดท้ายนี้... เค้ารักเธอนะ รักมากจริงๆ รักแบบไม่มีเงื่อนไขใดๆ</p>
 
-      <button class="btn-music" onclick="toggleMusic()">🎵 เปิด/ปิด เพลง</button>
-
-      <!-- YouTube iframe ซ่อน -->
-      <div id="yt-player" style="display:none;">
-        <iframe id="yt-iframe" width="0" height="0" src="https://www.youtube.com/embed/aYW47a31jH4?enablejsapi=1&loop=1&playlist=aYW47a31jH4"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <button onclick="playMusic()">เปิดเพลง</button>
+    <iframe id="ytplayer" width="0" height="0"
+      src="https://www.youtube.com/embed/aYW47a31jH4?enablejsapi=1"
+      frameborder="0" allow="autoplay"></iframe>
+    
+    <script>
+      function playMusic() {
+        const player = document.getElementById('ytplayer').contentWindow;
+        player.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
+    </script>    
       </div>
     </div>
   </div>
