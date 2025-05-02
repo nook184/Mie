@@ -101,7 +101,7 @@
 
   <div class="container">
     <div class="card">
-      <img class="image" src="https://i.imgur.com/BJeTgIn.png" alt="Hello Kitty" />
+      <img class="image" src="https://media.discordapp.net/attachments/1336999472303177761/1367802415927263332/IMG_2401.jpg?ex=6815e8c4&is=68149744&hm=72d3571abfd572b7d4123b3a2945b61853c30a8fc6c27c7761ecf75d1dbe8095&=&format=webp&width=294&height=500" alt="Hello Kitty" />
       <div class="heart">💖</div>
       <h1>ถึงคนที่เค้ารักที่สุดในโลก</h1>
       <p>
@@ -115,26 +115,26 @@
         - จากเค้าคนเดิม -
       </p>
 
-      <audio id="bg-music" loop>
-        <source src="https://drive.google.com/uc?export=download&id=1Fp1qaRjly91NWiz4-tJ6Tuu5joSF3B9w" type="audio/mpeg">
-        เพลงไม่สามารถเล่นได้
-      </audio>
-      
-      <button onclick="toggleMusic()" style="
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #ff69b4;
-        border: none;
-        color: white;
-        border-radius: 25px;
-        font-size: 1em;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      ">
-        ▶️ เปิดเพลง
-      </button>      
-    </div>
-  </div>
+       <!-- ✅ ปุ่มและเพลงอยู่ใน card เดียวกัน -->
+  <audio id="bg-music" loop>
+    <source src="https://drive.google.com/uc?export=download&id=1Fp1qaRjly91NWiz4-tJ6Tuu5joSF3B9w" type="audio/mpeg">
+    เพลงไม่สามารถเล่นได้
+  </audio>
+
+  <button onclick="toggleMusic()" style="
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ff69b4;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  ">
+    ▶️ เปิดเพลง
+  </button>
+</div>
 
   <script>
     // หัวใจลอยเหมือนเดิม
@@ -151,20 +151,20 @@
     setInterval(createHeart, 300);
   
     // ควบคุมเพลง
-    const music = document.getElementById("bg-music");
-    const button = document.querySelector("button");
-    let isPlaying = false;
-  
-    function toggleMusic() {
-      if (isPlaying) {
-        music.pause();
-        button.textContent = "▶️ เปิดเพลง";
-      } else {
-        music.play();
-        button.textContent = "⏸️ หยุดเพลง";
-      }
-      isPlaying = !isPlaying;
+  const music = document.getElementById("bg-music");
+  const button = document.querySelector("button");
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      button.textContent = "▶️ เปิดเพลง";
+    } else {
+      music.play();
+      button.textContent = "⏸️ หยุดเพลง";
     }
-  </script>  
+    isPlaying = !isPlaying;
+  }
+</script>  
 </body>
 </html>
