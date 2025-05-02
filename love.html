@@ -2,91 +2,63 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>สุขสันตวันครบรอบ 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ถึงคนพิเศษของเค้า 💖</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
       font-family: 'Kanit', sans-serif;
-      color: #333;
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
       overflow: hidden;
     }
-
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      z-index: 1;
+      padding: 40px 20px;
       position: relative;
     }
-
-    .card {
-      background: white;
-      border-radius: 25px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      max-width: 600px;
-      z-index: 10;
-    }
-
-    h1 {
-      color: #ff69b4;
-      font-size: 2em;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
-
-    .image {
-      width: 120px;
-      margin-bottom: 20px;
+    .kitty {
+      width: 150px;
       animation: float 3s ease-in-out infinite;
     }
-
+    .card {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+      max-width: 600px;
+      margin: 30px auto;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+      position: relative;
+    }
     .heart {
-      font-size: 2em;
-      animation: pulse 1s infinite;
-      color: #ff5a91;
+      font-size: 40px;
+      animation: heartbeat 1s infinite;
     }
-
-    audio {
+    .btn-music {
+      background-color: #ff66aa;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
       margin-top: 20px;
+      transition: background 0.3s;
     }
-
-    .floating-hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
+    .btn-music:hover {
+      background-color: #ff99cc;
     }
-
+    /* Floating hearts */
     .heart-float {
       position: absolute;
-      color: #ff5a91;
-      font-size: 24px;
-      animation: floatUp 5s linear infinite;
-      opacity: 0.7;
+      width: 20px;
+      height: 20px;
+      animation: float-up 5s infinite;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(1); opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
     }
 
     @keyframes float {
@@ -94,64 +66,85 @@
       50% { transform: translateY(-10px); }
       100% { transform: translateY(0px); }
     }
+
+    @keyframes float-up {
+      0% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="floating-hearts" id="hearts"></div>
-
   <div class="container">
+    <img src="https://i.imgur.com/BJeTgIn.png" alt="Hello Kitty" class="kitty" />
+    
     <div class="card">
-      <img class="image" src="https://media.discordapp.net/attachments/1336999472303177761/1367802415927263332/IMG_2401.jpg?ex=6815e8c4&is=68149744&hm=72d3571abfd572b7d4123b3a2945b61853c30a8fc6c27c7761ecf75d1dbe8095&=&format=webp&width=294&height=500" alt="Hello Kitty" />
       <div class="heart">💖</div>
       <h1>ถึงคนที่เค้ารักที่สุดในโลก</h1>
       <p>
-        เธอรู้มั้ย? เค้าตั้งใจทำเว็บนี้ให้เลยนะ 💌<br />
+        ตัวเองรู้มั้ย? เค้าตั้งใจทำเว็บนี้ให้เลยนะ 💌<br />
         ก็เพราะว่า... <br /><br />
-        <strong>เค้ารักเธอมากๆ เลยย 🥺💕</strong><br /><br />
+        <strong>เค้ารักตัวเองมากๆ เลยย 🥺💕</strong><br /><br />
         ไม่ว่าเวลาจะผ่านไปแค่ไหน <br />
-        เค้าก็ยังอยากอยู่กับเธอแบบนี้ไปเรื่อยๆ <br />
-        เพราะเธอคือโลกทั้งใบของเค้าเลย 💘<br /><br />
+        เค้าก็ยังอยากอยู่กับตัวเองแบบนี้ไปเรื่อยๆ <br />
+        เพราะตัวเองคือโลกทั้งใบของเค้าเลย 💘<br /><br />
         รักที่สุดนะ จุ๊บๆ 💋<br />
         - จากเค้าคนเดิม -
       </p>
 
-    <!-- ✅ ฝังเพลงจาก YouTube -->
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/aYW47a31jH4?autoplay=1&loop=1&playlist=aYW47a31jH4&controls=0&showinfo=0&modestbranding=1" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+      <button class="btn-music" onclick="toggleMusic()">🎵 เปิด/ปิด เพลง</button>
 
+      <!-- YouTube iframe ซ่อน -->
+      <div id="yt-player" style="display:none;">
+        <iframe id="yt-iframe" width="0" height="0" src="https://www.youtube.com/embed/aYW47a31jH4?enablejsapi=1&loop=1&playlist=aYW47a31jH4"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating hearts effect -->
   <script>
-    // หัวใจลอยเหมือนเดิม
-    const heartsContainer = document.getElementById("hearts");
     function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart-float");
-      heart.textContent = "💖";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-      heartsContainer.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
+      const heart = document.createElement('div');
+      heart.classList.add('heart-float');
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
     }
-    setInterval(createHeart, 300);
-  
-    // ควบคุมเพลง
-  const music = document.getElementById("bg-music");
-  const button = document.querySelector("button");
-  let isPlaying = false;
+    setInterval(createHeart, 500);
+  </script>
 
-  function toggleMusic() {
-    if (isPlaying) {
-      music.pause();
-      button.textContent = "▶️ เปิดเพลง";
-    } else {
-      music.play();
-      button.textContent = "⏸️ หยุดเพลง";
+  <!-- YouTube Player API -->
+  <script>
+    let player;
+    let musicPlaying = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-iframe');
     }
-    isPlaying = !isPlaying;
-  }
-</script>  
+
+    function toggleMusic() {
+      if (!player) return;
+      if (musicPlaying) {
+        player.pauseVideo();
+        musicPlaying = false;
+      } else {
+        player.playVideo();
+        musicPlaying = true;
+      }
+    }
+
+    // Load YouTube API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  </script>
 </body>
 </html>
