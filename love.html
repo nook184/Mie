@@ -11,7 +11,7 @@
       font-family: 'Kanit', sans-serif;
       background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
       overflow-x: hidden;
-      overflow-y: auto; /* ✅ เปิดเลื่อนแนวตั้ง */
+      overflow-y: auto;
     }
     .container {
       text-align: center;
@@ -61,10 +61,39 @@
         opacity: 0;
       }
     }
+
+    /* 🐻 หมีวิ่ง */
+    .bear-run {
+      position: fixed;
+      bottom: 0;
+      left: -200px;
+      width: 120px;
+      z-index: 10;
+      animation: runAcross 10s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes runAcross {
+      0% {
+        left: -200px;
+        transform: scaleX(1);
+      }
+      50% {
+        left: 100vw;
+        transform: scaleX(1);
+      }
+      51% {
+        transform: scaleX(-1);
+      }
+      100% {
+        left: -200px;
+        transform: scaleX(-1);
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- เอฟเฟกต์หัวใจลอย -->
+  <!-- หัวใจลอย -->
   <script>
     function createHeart() {
       const heart = document.createElement('div');
@@ -107,7 +136,10 @@
     </div>
   </div>
 
-  <!-- เล่นเพลงอัตโนมัติ (YouTube Embed แบบซ่อน) -->
+  <!-- เพลง YouTube -->
   <iframe width="0" height="0" src="https://www.youtube.com/embed/aYW47a31jH4?autoplay=1&mute=0&loop=1&playlist=aYW47a31jH4" frameborder="0" allow="autoplay"></iframe>
+
+  <!-- หมีวิ่ง -->
+  <img src="https://i.imgur.com/G7BZBvB.png" alt="Running Bear" class="bear-run" />
 </body>
 </html>
